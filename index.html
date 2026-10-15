@@ -4,23 +4,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Jesse van den Hoven — MSc Information Sciences | VDH Solutions</title>
-<meta name="description" content="Jesse van den Hoven — MSc Information Sciences (Aligning Business & IT), Radboud University. Business–IT alignment, application management and AI adoption. Based in Nijmegen, the Netherlands.">
+<meta name="description" content="Jesse van den Hoven — Business IT Consultant & MSc Information Sciences (Aligning Business & IT), Radboud University. Business–IT alignment, application management and AI adoption. Based in Nijmegen, the Netherlands.">
 <link rel="canonical" href="https://vdhsolutions.nl/">
+<link rel="alternate" hreflang="en" href="https://vdhsolutions.nl/">
+<link rel="alternate" hreflang="nl" href="https://vdhsolutions.nl/nl/">
+<link rel="alternate" hreflang="x-default" href="https://vdhsolutions.nl/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="author" content="Jesse van den Hoven">
-<link rel="icon" href="logo.png">
+<link rel="icon" href="/logo.png">
 
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://vdhsolutions.nl/">
 <meta property="og:site_name" content="VDH Solutions">
 <meta property="og:locale" content="en_GB">
-<meta property="og:title" content="Jesse van den Hoven — MSc Information Sciences">
+<meta property="og:title" content="Jesse van den Hoven — MSc Information Sciences | Business IT Consultant">
 <meta property="og:description" content="Business–IT alignment, application management and AI adoption. Based in Nijmegen, the Netherlands.">
 <meta property="og:image" content="https://vdhsolutions.nl/foto.jpeg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Jesse van den Hoven — MSc Information Sciences">
+<meta name="twitter:title" content="Jesse van den Hoven — MSc Information Sciences | Business IT Consultant">
 <meta name="twitter:description" content="Business–IT alignment, application management and AI adoption.">
 <meta name="twitter:image" content="https://vdhsolutions.nl/foto.jpeg">
+
+<script>
+(() => {
+  const pref = localStorage.getItem('preferred_lang');
+  if (pref === 'nl' || (!pref && navigator.language && navigator.language.toLowerCase().startsWith('nl'))) {
+    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+      window.location.replace('/nl/' + window.location.hash);
+    }
+  }
+})();
+</script>
 
 <script type="application/ld+json">
 {
@@ -30,8 +44,8 @@
   "url": "https://vdhsolutions.nl/",
   "image": "https://vdhsolutions.nl/foto.jpeg",
   "email": "mailto:info@vdhsolutions.nl",
-  "jobTitle": "Information Sciences professional",
-  "description": "MSc Information Sciences (Aligning Business and IT). Works on business–IT alignment, application management and AI adoption.",
+  "jobTitle": "Business IT Consultant",
+  "description": "Business IT Consultant & MSc Information Sciences (Aligning Business and IT). Works on business–IT alignment, digital transformation and AI adoption.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Nijmegen",
@@ -182,6 +196,28 @@ a{color:inherit; text-decoration:none}
 }
 .nav-cta:hover{background:#000 !important}
 
+.nav-right{
+  display:flex; align-items:center; gap:.65rem;
+}
+
+.lang-switch{
+  display:inline-flex; align-items:center; gap:.15rem;
+  padding:.2rem .4rem; border-radius:999px;
+  background:rgba(0,0,0,.04); border:1px solid var(--hairline);
+  font-size:.78rem; font-weight:600; letter-spacing:.02em;
+}
+.lang-btn{
+  display:inline-block; padding:.16rem .45rem; border-radius:999px;
+  color:var(--ink-3); transition:all 160ms ease; text-decoration:none;
+  cursor:pointer; line-height:1.2;
+}
+.lang-btn:hover:not(.active){color:var(--ink); background:rgba(0,0,0,.04)}
+.lang-btn.active{
+  color:var(--ink); background:var(--surface);
+  box-shadow:0 1px 2px rgba(0,0,0,.08); font-weight:680; cursor:default;
+}
+.lang-sep{color:var(--hairline-strong); font-size:.7rem; user-select:none}
+
 .burger{
   display:none; width:36px; height:36px; border:0; padding:0;
   background:rgba(0,0,0,.05); border-radius:10px; cursor:pointer;
@@ -219,7 +255,11 @@ a{color:inherit; text-decoration:none}
   font-size:1.05rem; font-weight:540; letter-spacing:-.012em;
   border-bottom:1px solid var(--hairline);
 }
-.sheet a:last-child{border-bottom:0}
+.sheet a:last-of-type{border-bottom:0}
+.sheet-lang{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:.9rem .2rem .3rem; border-top:1px solid var(--hairline); margin-top:.4rem;
+}
 
 /* ============================================================
    Buttons — feedback on press, not on release
@@ -496,7 +536,7 @@ footer{
 <nav class="nav" id="nav">
   <div class="wrap nav-in">
     <a class="brand" href="#top" aria-label="VDH Solutions — home">
-      <img src="logo.png" alt="">
+      <img src="/logo.png" alt="">
       <span>VDH <span class="slash">/</span> Solutions</span>
     </a>
 
@@ -508,9 +548,17 @@ footer{
       <li><a href="#contact" class="nav-cta">Get in touch</a></li>
     </ul>
 
-    <button class="burger" id="burger" aria-expanded="false" aria-controls="sheet" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language selection">
+        <span class="lang-btn active" aria-current="true" title="English version">EN</span>
+        <span class="lang-sep">/</span>
+        <a href="/nl/" class="lang-btn" data-lang="nl" hreflang="nl" title="Nederlandse versie">NL</a>
+      </div>
+
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="sheet" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -520,6 +568,14 @@ footer{
   <a href="#expertise">Expertise</a>
   <a href="#credentials">Credentials</a>
   <a href="#contact">Get in touch</a>
+  <div class="sheet-lang">
+    <span class="meta">Language:</span>
+    <div class="lang-switch">
+      <span class="lang-btn active">EN</span>
+      <span class="lang-sep">/</span>
+      <a href="/nl/" class="lang-btn" data-lang="nl">NL</a>
+    </div>
+  </div>
 </div>
 
 <!-- ============================ HERO ============================ -->
@@ -545,8 +601,8 @@ footer{
         See my work
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
       </a>
-      <a href="CV_Jesse_van_den_Hoven_NL.pdf" download class="btn btn-ghost">
-        Download CV (NL)
+      <a href="/ENG_Curriculum Vitae_Jesse van den Hoven.pdf" download class="btn btn-ghost">
+        Download CV (EN)
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
       </a>
     </div>
@@ -564,7 +620,7 @@ footer{
 <section id="about">
   <div class="wrap about">
     <div class="portrait reveal">
-      <img src="foto.jpeg" alt="Portrait of Jesse van den Hoven">
+      <img src="/foto.jpeg" alt="Portrait of Jesse van den Hoven">
     </div>
 
     <div>
@@ -581,9 +637,9 @@ footer{
           between them.
         </p>
         <p class="body" style="margin-top:1rem">
-          I graduated in 2026 with a thesis carried out at <strong>Gemeente Nijmegen</strong>.
+          In 2026 I graduated with a master's thesis conducted at <strong>Gemeente Nijmegen</strong>.
           Alongside my studies I taught Requirements Engineering &amp; Design at Radboud,
-          and I currently help Stolwijk Kennisnetwerk move their internal AI work forward.
+          and I currently work as a <strong>Business IT Consultant</strong> at Stolwijk Kennisnetwerk.
         </p>
         <p class="quote">
           The interesting problems are never purely technical. They're where a process,
@@ -611,13 +667,14 @@ footer{
           <article class="entry reveal" data-now="true">
             <div class="entry-card">
               <div class="entry-top">
-                <h4 class="h3">AI Working Student<span class="now-pill">Now</span></h4>
+                <h4 class="h3">Business IT Consultant<span class="now-pill">Now</span></h4>
                 <span class="meta">Feb 2026 — present</span>
               </div>
               <p class="org">Stolwijk Kennisnetwerk (TLA Advies)</p>
               <ul>
-                <li>Driving internal AI development and adoption across the organisation.</li>
-                <li>Translating AI possibilities into practical use cases for advisors.</li>
+                <li>Advising on business–IT alignment, digital transformation, and enterprise architecture.</li>
+                <li>Driving internal AI development, practical adoption, and use-case implementation across the organisation.</li>
+                <li>Translating business needs and technological opportunities into practical processes and tools for advisors.</li>
               </ul>
             </div>
           </article>
@@ -850,10 +907,9 @@ footer{
   <div class="wrap">
     <div class="contact-panel reveal">
       <p class="eyebrow">Contact</p>
-      <h2 class="h2">Master's done. Looking for what's next.</h2>
+      <h2 class="h2">Let's connect.</h2>
       <p class="lede">
-        Open to roles on the seam between business and IT — business analysis, information
-        management, consultancy, or anything where those two need a translator.
+        Always open to connect, exchange thoughts on business–IT alignment, AI adoption, or explore new challenges and collaborations.
       </p>
 
       <div class="links">
@@ -865,7 +921,7 @@ footer{
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05A4.2 4.2 0 0 1 17.6 8.7c4 0 4.4 2.4 4.4 5.6V21h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21h-4V9Z"/></svg>
           LinkedIn
         </a>
-        <a class="link-pill" href="CV_Jesse_van_den_Hoven_NL.pdf" download>
+        <a class="link-pill" href="/ENG_Curriculum Vitae_Jesse van den Hoven.pdf" download>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
           Curriculum Vitae
         </a>
@@ -910,6 +966,20 @@ footer{
   addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
   addEventListener('click', e => {
     if (sheet.dataset.open === 'true' && !sheet.contains(e.target) && !burger.contains(e.target)) setOpen(false);
+  });
+
+  /* ---------- Language switcher: remember preference and retain hash ---------- */
+  document.querySelectorAll('.lang-btn[data-lang]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const targetLang = btn.dataset.lang;
+      localStorage.setItem('preferred_lang', targetLang);
+      const hash = window.location.hash;
+      const href = btn.getAttribute('href');
+      if (hash && href) {
+        e.preventDefault();
+        window.location.href = href + hash;
+      }
+    });
   });
 
   /* ---------- Reveal on scroll, staggered by position in group ---------- */
