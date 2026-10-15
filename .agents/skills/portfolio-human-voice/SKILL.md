@@ -43,7 +43,4 @@ Do NOT use:
 1. **Draft in First-Person**: Keep sentences active and direct (*"Ik help..."*, *"Ik zorg voor..."*, *"Ik heb gewerkt aan..."*).
 2. **Read Aloud Test**: If a sentence sounds like an AI generated an elevator pitch, simplify it to plain Dutch or English.
 3. **Punctuation Check**: Run a search for `\u2014` (`—`) and `\u2013` (`–`). If any are found, replace with a comma, parentheses, or rewrite into a clean sentence.
-4. **Validation**: Run the automated check:
-   ```bash
-   python3 tools/validate.py
-   ```
+4. **Verification**: Check the page in a browser to ensure the tone reads naturally and all information is accurate.

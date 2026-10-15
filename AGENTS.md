@@ -19,13 +19,10 @@ These instructions apply to all AI agents working within this repository.
 - **Tone**: Down-to-earth, pragmatic, hands-on, and authentic, matching Jesse van den Hoven's real voice from his motivation letter and CV.
 - Avoid robotic AI buzzwords like *"aanjagen van"*, *"use-case discovery"*, *"Adoption, not demos"*, *"cruciale synergie"*.
 
-## 4. Skills & Validation
+## 4. Skills & Verification
 Before submitting any work or pushing commits, activate and follow the workspace skills:
 - **`portfolio-human-voice`**: `.agents/skills/portfolio-human-voice/SKILL.md`
 - **`portfolio-i18n-management`**: `.agents/skills/portfolio-i18n-management/SKILL.md`
 - **`portfolio-site-qa-deploy`**: `.agents/skills/portfolio-site-qa-deploy/SKILL.md`
 
-Always verify that the validator passes cleanly:
-```bash
-python3 tools/validate.py
-```
+Always verify that both HTML pages render cleanly, links and assets resolve, and no em-dashes (`—`) exist.

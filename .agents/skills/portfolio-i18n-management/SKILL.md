@@ -37,7 +37,4 @@ Whenever any section (Hero, About, Experience, Education, Expertise, Contact) is
 
 ## Verification
 
-After making updates across languages, verify integrity:
-```bash
-python3 tools/validate.py
-```
+After making updates across languages, verify in a browser that both pages render properly and all links/downloads work cleanly.
